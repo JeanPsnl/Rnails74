@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation | R.Nails74</title>
+    <link rel="stylesheet" href="public/css/reservation.css">
+    <script defer src="public/js/reservation.js"></script>
+</head>
+<body>
+
+    <!-- BARRE BLANCHE EN HAUT -->
+    <header>
+        <div class="top-banner">
+            <button class="menu-toggle">&#9776;</button>
+            <img src="public/images/Logo.png" alt="R Nails 74" class="logo">
+        </div>
+    </header>
+
+    <!-- MENU DÉROULANT -->
+    <nav class="nav-menu">
+        <button class="close-menu">&times;</button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="reservation.html">Réservation</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="reservation">
+        <h1>Réservez votre rendez-vous</h1>
+        <p>Répondez aux questions pour choisir la prestation adaptée.</p>
+
+        <!-- Étape 1 : Dépose nécessaire -->
+        <label for="depPose">Avez-vous besoin d'une dépose ?</label>
+        <select id="depPose">
+            <option value="non">Non</option>
+            <option value="oui">Oui</option>
+        </select>
+
+        <!-- Étape 2 : Pose faite ailleurs ? (Cachée par défaut) -->
+        <div id="poseAilleursContainer" style="display: none;">
+            <label for="poseAilleurs">Votre pose précédente a-t-elle été faite ailleurs ?</label>
+            <select id="poseAilleurs">
+                <option value="non">Non</option>
+                <option value="oui">Oui</option>
+            </select>
+        </div>
+
+        <!-- Étape 3 : Sélection de la prestation -->
+        <label for="prestation">Choisissez votre prestation :</label>
+        <select id="prestation">
+            <!-- Options chargées dynamiquement depuis admin -->
+        </select>
+
+        <!-- Bouton de réservation -->
+        <button id="reserver">Réserver</button>
+    </main>
+
+    <!-- FOOTER COLLÉ EN BAS -->
+    <footer>
+        <p>Contact : <a href="mailto:contact@rnails74.fr">contact@rnails74.fr</a> | Instagram : @rnails74</p>
+    </footer>
+
+</body>
+</html>

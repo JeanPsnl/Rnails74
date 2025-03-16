@@ -1,0 +1,269 @@
+/* Importation de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Reset général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* BODY & BACKGROUND */
+body {
+    background: url('/images/background.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    height: 40px;
+    width: auto;
+    max-width: 100px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* BARRE BLANCHE FIXE EN HAUT */
+.top-banner {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 70px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+/* MENU BURGER */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* MENU DÉROULANT */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 3000;
+}
+
+/* BOUTON DE FERMETURE */
+.close-menu {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: transform 0.3s ease;
+    z-index: 3100;
+}
+
+.close-menu:hover {
+    transform: rotate(90deg);
+}
+
+/* LISTE DU MENU */
+.nav-menu ul {
+    list-style: none;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.nav-menu ul li {
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff69b4;
+    transform: translateX(5px);
+}
+
+/* AFFICHAGE DU MENU ACTIF */
+.nav-menu.active {
+    left: 0;
+}
+
+/* CONTENEUR DE RÉSERVATION */
+.reservation-container {
+    max-width: 450px;
+    width: 90%;
+    margin-top: 120px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* TITRE PRINCIPAL */
+.reservation-container h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* SOUS-TITRE */
+.reservation-container p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* CHAMPS DE FORMULAIRE */
+.reservation-container label {
+    display: block;
+    font-weight: 600;
+    text-align: left;
+    margin: 15px 0 5px;
+    color: #333;
+    font-size: 16px;
+}
+
+.reservation-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* ESPACEMENT POUR LES BLOCS CACHÉS */
+#poseAilleursContainer {
+    display: none;
+}
+
+/* BOUTON DE RÉSERVATION */
+#reserver {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #ff69b4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+#reserver:hover {
+    background: #ff1493;
+    transform: scale(1.05);
+}
+
+/* IMAGE DE BACKGROUND */
+.reservation-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #333;
+    margin-top: auto;
+    width: 100%;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+}
+.instagram-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* LIENS DANS LE FOOTER */
+footer a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    .reservation-container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .reservation-container h1 {
+        font-size: 22px;
+    }
+
+    .reservation-container p {
+        font-size: 14px;
+    }
+
+    #reserver {
+        font-size: 16px;
+    }
+
+    .top-banner {
+        height: 65px;
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+}

@@ -1,0 +1,243 @@
+/* Importation de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Reset général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Bandeau blanc en haut */
+.top-banner {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu hamburger */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Menu déroulant latéral à gauche */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 3000; /* Assure que le menu passe au-dessus */
+}
+
+/* Bouton de fermeture (croix à droite) */
+.close-menu {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: transform 0.3s ease;
+    z-index: 3100;
+}
+
+.close-menu:hover {
+    transform: rotate(90deg);
+}
+
+/* Liste du menu */
+.nav-menu ul {
+    list-style: none;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.nav-menu ul li {
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff69b4;
+    transform: translateX(5px);
+}
+
+/* Affichage du menu actif */
+.nav-menu.active {
+    left: 0;
+}
+
+/* Hero Section avec texte directement sur l'image */
+.hero {
+    height: 100vh;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Bouton Réserver */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #ff69b4;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    background: #ff1493;
+    transform: scale(1.05);
+}
+
+/* Footer professionnel */
+footer {
+    background: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Adresse e-mail en noir, sans soulignement */
+.footer-container a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-container a:hover {
+    opacity: 0.7;
+}
+
+/* Lien Instagram */
+.instagram-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Icône Instagram */
+.instagram-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

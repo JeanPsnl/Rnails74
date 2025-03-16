@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Prestations | R.Nails74</title>
+    <link rel="stylesheet" href="/css/reservation.css">
+</head>
+<body>
+    <%- include("partials/header") %>
+
+    <main>
+        <div class="reservation-box">
+            <h2>Réservez votre prestation</h2>
+            <p>Remplissez les options ci-dessous pour réserver.</p>
+            
+            <form id="reservationForm">
+                <label for="depose">Avez-vous une dépose à faire ?</label>
+                <select id="depose" name="depose" required>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                </select>
+    
+                <label for="poseAilleurs">La pose précédente a-t-elle été faite ailleurs ?</label>
+                <select id="poseAilleurs" name="poseAilleurs" required>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non, chez la pro</option>
+                </select>
+    
+                <label for="prestation">Type de prestation :</label>
+                <select id="prestation" name="prestation" required>
+                    <% prestations.forEach(presta => { %>
+                        <option value="<%= presta.id %>"><%= presta.nom %> - <%= presta.niveau %></option>
+                    <% }) %>
+                </select>
+    
+                <button type="submit">Réserver</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="/js/reservation.js"></script>
+    
+    <%- include("partials/footer") %>
+    </body> 
+    </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil | R.Nails74</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("partials/header") %>
+
+    <main>
+        <div class="reservation-box">
+            <h2>Réservez votre créneau</h2>
+            <p>Voici votre calendrier de réservation :</p>
+            
+
+<!-- 🔍 Affichage des infos de la prestation -->
+<div class="prestation-info">
+    <h2><%= prestation.nom %></h2>
+    <p>⏳ Durée : <%= prestation.temps_sans_depose %></p>
+    <p>💰 Prix : <%= prestation.prix_sans_depose %>€</p>
+</div>
+
+<!-- Widget Calendly -->
+<iframe src="<%= widget %>" width="100%" height="600px" frameborder="0"></iframe>
+    
+            <div class="calendly-inline-widget" data-url="<%= widget %>?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+    </main>
+    
+    <%- include("partials/footer") %>
+</body>
+</html>

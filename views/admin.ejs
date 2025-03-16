@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gestion des Prestations</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <style>
+        /* ✅ Styles pour la pop-up */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px black;
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gestion des Prestations</h1>
+
+    <!-- Tableau des prestations -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Niveau</th>
+                <th>Prix Sans Dépose</th>
+                <th>Prix Avec Dépose</th>
+                <th>Prix Dépose Ailleurs</th>
+                <th>Temps Sans Dépose</th>
+                <th>Temps Avec Dépose</th>
+                <th>Calendly Sans Dépose</th>
+                <th>Calendly Avec Dépose</th>
+                <th>Calendly Dépose Ailleurs</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% prestations.forEach(prestation => { %>
+                <tr>
+                    <td><%= prestation.nom %></td>
+                    <td><%= prestation.niveau %></td>
+                    <td><%= prestation.prix_sans_depose %>€</td>
+                    <td><%= prestation.prix_avec_depose %>€</td>
+                    <td><%= prestation.prix_depose_ailleurs %>€</td>
+                    <td><%= prestation.temps_sans_depose %></td>
+                    <td><%= prestation.temps_avec_depose %></td>
+                    <td><%= prestation.calendly_url_sans_depose %></td>
+                    <td><%= prestation.calendly_url_avec_depose %></td>
+                    <td><%= prestation.calendly_url_depose_ailleurs %></td>
+                    <td>
+                        <button class="edit-btn" data-id="<%= prestation.id %>">Modifier</button>
+                        <button class="delete-btn" data-id="<%= prestation.id %>">Supprimer</button>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <!-- ✅ Vraie pop-up qui s'ouvre en plein écran -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modifier une prestation</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+
+                <label>Nom :</label>
+                <input type="text" id="editNom">
+
+                <label>Niveau :</label>
+                <input type="text" id="editNiveau">
+
+                <label>Prix Sans Dépose :</label>
+                <input type="number" step="0.01" id="editPrixSansDepose">
+
+                <label>Prix Avec Dépose :</label>
+                <input type="number" step="0.01" id="editPrixAvecDepose">
+
+                <label>Prix Dépose Ailleurs :</label>
+                <input type="number" step="0.01" id="editPrixDeposeAilleurs">
+
+                <label>Temps Sans Dépose :</label>
+                <input type="text" id="editTempsSansDepose">
+
+                <label>Temps Avec Dépose :</label>
+                <input type="text" id="editTempsAvecDepose">
+
+                <label>URL Calendly Sans Dépose :</label>
+                <input type="text" id="editCalendlySansDepose">
+
+                <label>URL Calendly Avec Dépose :</label>
+                <input type="text" id="editCalendlyAvecDepose">
+
+                <label>URL Calendly Dépose Ailleurs :</label>
+                <input type="text" id="editCalendlyDeposeAilleurs">
+
+                <button type="submit">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

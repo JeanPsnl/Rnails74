@@ -1,0 +1,149 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Reset général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* BARRE BLANCHE FIXE EN HAUT */
+.top-banner {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 70px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+/* LOGO CENTRÉ */
+.logo {
+    height: 40px;
+    width: auto;
+    max-width: 100px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* MENU BURGER */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* MENU DÉROULANT */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 3000;
+}
+
+/* AFFICHAGE DU MENU ACTIF */
+.nav-menu.active {
+    left: 0;
+}
+
+/* LISTE DU MENU */
+.nav-menu ul {
+    list-style: none;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.nav-menu ul li {
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff69b4;
+    transform: translateX(5px);
+}
+
+/* TITRE PRINCIPAL */
+.prestations-container {
+    text-align: center;
+    padding: 120px 20px;
+    background: #fdf1f8;
+}
+
+/* LISTE DES PRESTATIONS */
+.prestations-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* CARTE DE PRESTATION */
+.prestation-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prestation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* BOUTON DE RÉSERVATION */
+.book-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ff69b4;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #ff1493;
+}
